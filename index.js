@@ -3,7 +3,7 @@ const inquirer = require('inquirer');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
-const generateHTML = require('./src/page-template');
+const generateHTML = require('./src/page-template.js');
 
 var teamMembers = [];
     
@@ -39,8 +39,8 @@ function createManager() {
             }
         ])
         .then(( answers ) => {
-            this.manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
-            teamMembers.push(this.manager);
+            const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
+            teamMembers.push(manager);
 
             if (answers.confirmTeam) {
                 createTeam();
@@ -101,8 +101,8 @@ function createIntern() {
             }
         ])
         .then(( answers ) => {
-            this.intern = new Intern(answers.name, answers.id, answers.email, answers.school);
-            teamMembers.push(this.intern);
+            const intern = new Intern(answers.name, answers.id, answers.email, answers.school);
+            teamMembers.push(intern);
 
             if (answers.confirmTeam) {
                 createTeam();
@@ -145,8 +145,8 @@ function createEngineer() {
             }
         ])
         .then(( answers ) => {
-            this.engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
-            teamMembers.push(this.engineer);
+            const engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
+            teamMembers.push(engineer);
 
             if (answers.confirmTeam) {
                 createTeam();
