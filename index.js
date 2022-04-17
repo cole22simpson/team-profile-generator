@@ -3,6 +3,7 @@ const inquirer = require('inquirer');
 const Intern = require('./lib/Intern');
 const Engineer = require('./lib/Engineer');
 const Manager = require('./lib/Manager');
+const generateHTML = require('./src/page-template');
 
 var teamMembers = [];
 
@@ -47,7 +48,7 @@ function createManager() {
             }
             else {
                 console.log("Your team profile has been created!");
-                // Create file here later
+                return writeToFile("./dist/index.html", teamMembers);
             }
         })
 };
@@ -65,7 +66,7 @@ function createTeam() {
                 createIntern();
             }
             else {
-                createEngineer();
+                createEngineer(teamMembers);
             }
         })
 };
@@ -96,7 +97,8 @@ function createIntern() {
             {
                 type: 'confirm',
                 name: 'confirmTeam',
-                message: 'Do you want to add another team member?'
+                message: 'Do you want to add another team member?',
+                default: false
             }
         ])
         .then(( answers ) => {
@@ -109,7 +111,7 @@ function createIntern() {
             }
             else {
                 console.log("Your team profile has been created!");
-                // Create file here later
+                return writeToFile("./dist/index.html", teamMembers);
             }
         })
 };
@@ -134,7 +136,7 @@ function createEngineer() {
             },
             {
                 type: 'input',
-                name: 'school',
+                name: 'github',
                 message: "What is this engineer's GitHub username?"
             },
             {
@@ -153,10 +155,22 @@ function createEngineer() {
                 createTeam();
             }
             else {
+                
                 console.log("Your team profile has been created!");
-                // Create file here later
+                return writeToFile("./dist/index.html", teamMembers);
             }
         })
+};
+
+const writeToFile = (fileName, teamMembers) => {
+    fs.writeFile(fileName, generateHTML(teamMembers), function (err) {
+        if (err) {
+            console.log(err);
+        }
+        else {
+            console.log('Your team profile has been created! Open index.html to see how it looks!');
+        }
+    });
 };
 
 createManager();
