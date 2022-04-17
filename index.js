@@ -6,7 +6,7 @@ const Manager = require('./lib/Manager');
 const generateHTML = require('./src/page-template');
 
 var teamMembers = [];
-
+    
 function createManager() {
 
     inquirer
@@ -41,7 +41,6 @@ function createManager() {
         .then(( answers ) => {
             this.manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
             teamMembers.push(this.manager);
-            console.log(teamMembers);
 
             if (answers.confirmTeam) {
                 createTeam();
@@ -104,7 +103,6 @@ function createIntern() {
         .then(( answers ) => {
             this.intern = new Intern(answers.name, answers.id, answers.email, answers.school);
             teamMembers.push(this.intern);
-            console.log(teamMembers);
 
             if (answers.confirmTeam) {
                 createTeam();
@@ -149,7 +147,6 @@ function createEngineer() {
         .then(( answers ) => {
             this.engineer = new Engineer(answers.name, answers.id, answers.email, answers.github);
             teamMembers.push(this.engineer);
-            console.log(teamMembers);
 
             if (answers.confirmTeam) {
                 createTeam();

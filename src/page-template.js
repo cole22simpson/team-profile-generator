@@ -1,7 +1,9 @@
 function generateManager(teamMembers) {
+    console.log(teamMembers);
     
-    const [name, id, email, officeNumber] = teamMembers.Manager;
-    
+    for (var i = 0; i < teamMembers.length; i++) {
+        console.log([i].name);
+    }
     return `
     <div class="col-3 content-container">
         <div class="card" style="width: 18rem;">
@@ -35,7 +37,7 @@ function generateHTML(teamMembers) {
     console.log("PLACEHOLDER")
     console.log(teamMembers);
     return `
-        ${generateManager()}
+        ${generateManager(teamMembers)}
     `;
 };
 
