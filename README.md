@@ -27,6 +27,6 @@
   <br>
   Email me at cole22simpson@gmail.com
   
-  (The sample file is in the dist folder.)
+  (The sample file is in the dist folder. Open with movies and tv to see more than 5 pixels.)
 
 
