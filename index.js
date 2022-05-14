@@ -41,12 +41,12 @@ function createManager() {
         .then(( answers ) => {
             const manager = new Manager(answers.name, answers.id, answers.email, answers.officeNumber);
             teamMembers.push(manager);
+            console.log(teamMembers);
 
             if (answers.confirmTeam) {
                 createTeam();
             }
             else {
-                console.log("Your team profile has been created!");
                 return writeToFile("./dist/index.html", teamMembers);
             }
         })
@@ -108,7 +108,6 @@ function createIntern() {
                 createTeam();
             }
             else {
-                console.log("Your team profile has been created!");
                 return writeToFile("./dist/index.html", teamMembers);
             }
         })
@@ -152,8 +151,6 @@ function createEngineer() {
                 createTeam();
             }
             else {
-                
-                console.log("Your team profile has been created!");
                 return writeToFile("./dist/index.html", teamMembers);
             }
         })

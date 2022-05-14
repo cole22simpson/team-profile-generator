@@ -1,12 +1,14 @@
-function generateManager(manager) {
-    console.log(manager);
+function generateManager(teamMembers) {
+    console.log("PLACEHOLDER");
+    
+    console.log(teamMembers);
 
     return `
     <div class="col-3 content-container">
         <div class="card" style="width: 18rem;">
             <div class="card-header-style card-header">
                 <h3 class="card-title">
-                    ${manager.name}
+                    ${teamMembers.name}
                 </h3>
                 <h5 class="card-text">
                     <i class="fa-solid fa-mug-hot"></i> Manager
@@ -15,13 +17,13 @@ function generateManager(manager) {
             <div class="ul-container">
                 <ul class="list-group list-group-flush">
                     <li class="list-group-item">
-                        ID: ${manager.id}
+                        ID: ${teamMembers.id}
                     </li>
                     <li class="list-group-item">
-                        Email: ${manager.email}
+                        Email: ${teamMembers.email}
                     </li>
                     <li class="list-group-item">
-                        Office Number: ${manager.officeNumber}
+                        Office Number: ${teamMembers.officeNumber}
                     </li>
                 </ul>
             </div>
@@ -31,7 +33,6 @@ function generateManager(manager) {
 }
 
 function generateIntern(intern) {
-    console.log(intern);
 
     return `
     <div class="col-3 content-container">
@@ -53,7 +54,7 @@ function generateIntern(intern) {
                         Email: ${intern.email}
                     </li>
                     <li class="list-group-item">
-                        Office Number: ${intern.school}
+                        School: ${intern.school}
                     </li>
                 </ul>
             </div>
@@ -63,7 +64,6 @@ function generateIntern(intern) {
 }
 
 function generateEngineer(engineer) {
-    console.log(engineer);
 
     return `
     <div class="col-3 content-container">
@@ -85,7 +85,7 @@ function generateEngineer(engineer) {
                         Email: ${engineer.email}
                     </li>
                     <li class="list-group-item">
-                        Office Number: ${engineer.github}
+                        Github: ${engineer.github}
                     </li>
                 </ul>
             </div>
