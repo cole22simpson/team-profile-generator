@@ -7,7 +7,7 @@
 
   This application lets you create id cards for your new employees. It will create these ids by just asking you to answer some questions.
 
-  URL to the deployed application: https://github.com/cole22simpson/team-profile-generator
+  Link to the video demonstration: https://drive.google.com/file/d/1WZ0jOOzb6rEzSA8gpMFSWBwWjRFLTQPM/view
 
   ## Installation
 
