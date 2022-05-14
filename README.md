@@ -26,5 +26,7 @@
   Message me on GitHub [here](github.com/cole22simpson)
   <br>
   Email me at cole22simpson@gmail.com
+  
+  (The sample file is in the dist folder.)
 
 
